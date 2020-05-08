@@ -2,7 +2,7 @@
   <div>
     <div class="dropdown" :style="{ height: menuHeight }" ref="dropdown-ref">
       <transition name="menu-primary" @enter="calcHeight">
-        <div class="menu" v-if="activeMenu === 'main'">
+        <div class="menu" v-show="activeMenu === 'main'">
           <a href="#" class="menu-item">My Profile</a>
 
           <a href="#" class="menu-item" @click="setActiveMenu('settings')">
@@ -40,8 +40,8 @@
         </div>
       </transition>
 
-      <transition name="menu-secondary" unmountOnExit @enter="calcHeight">
-        <div class="menu" v-if="activeMenu === 'settings'">
+      <transition name="menu-secondary" @enter="calcHeight">
+        <div class="menu" v-show="activeMenu === 'settings'">
           <a href="#" class="menu-item" @click="setActiveMenu('main')">
             <span class="icon-button">
               <svg viewBox="0 0 448 512">
@@ -104,8 +104,8 @@
         </div>
       </transition>
 
-      <transition name="menu-secondary" unmountOnExit @enter="calcHeight">
-        <div class="menu" v-if="activeMenu === 'animals'">
+      <transition name="menu-secondary" @enter="calcHeight">
+        <div class="menu" v-show="activeMenu === 'animals'">
           <a href="#" class="menu-item" @click="setActiveMenu('main')">
             <span class="icon-button">
               <svg viewBox="0 0 448 512">

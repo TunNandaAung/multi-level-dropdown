@@ -38,7 +38,7 @@ code {
   --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
-  --speed: 300ms;
+  --speed: 500ms;
 }
 
 ul {
@@ -148,7 +148,7 @@ a {
 }
 
 /* CSSTransition classes  */
-.menu-primary-enter {
+/* .menu-primary-enter-to {
   position: absolute;
   transform: translateX(-110%);
 }
@@ -156,15 +156,31 @@ a {
   transform: translateX(0%);
   transition: all var(--speed) ease;
 }
-.menu-primary-leave {
+.menu-primary-leave-to {
   position: absolute;
 }
 .menu-primary-leave-active {
   transform: translateX(-110%);
   transition: all var(--speed) ease;
+} */
+
+.menu-primary-enter {
+  transform: translateX(-110%);
+  opacity: 0;
 }
 
-.menu-secondary-enter {
+.menu-primary-leave-to {
+  transform: translateX(-110%);
+  opacity: 0;
+}
+
+.menu-primary-enter-active,
+.menu-primary-leave-active {
+  position: absolute;
+  transition: all var(--speed) ease;
+}
+
+/* .menu-secondary-enter-to {
   transform: translateX(110%);
 }
 .menu-secondary-enter-active {
@@ -175,6 +191,20 @@ a {
 }
 .menu-secondary-leave-active {
   transform: translateX(110%);
+  transition: all var(--speed) ease;
+} */
+.menu-secondary-enter {
+  transform: translateX(110%);
+  opacity: 0;
+}
+
+.menu-secondary-leave-to {
+  transform: translateX(110%);
+  opacity: 0;
+}
+
+.menu-secondary-enter-active,
+.menu-secondary-leave-active {
   transition: all var(--speed) ease;
 }
 </style>
