@@ -1,21 +1,29 @@
 <template>
-  <div role="tabpanel" v-show="isActive">
+  <a href="#" class="menu-item" @click="setActiveMenu">
+    <span class="icon-button">
+      <slot name="icon-button"></slot>
+    </span>
     <slot></slot>
-  </div>
+    <span class="icon-right">
+      <slot name="icon-right"></slot>
+    </span>
+  </a>
 </template>
 
 <script>
 export default {
   props: {
-    leftIcon: {
-      required: false
-    },
-    rightIcon: {
-      required: false
-    },
     goToMenu: {
       type: String,
+      default: null,
       required: false
+    }
+  },
+  methods: {
+    setActiveMenu() {
+      if (this.goToMenu !== null) {
+        this.$emit("updateActiveMenu", this.goToMenu);
+      }
     }
   }
 };

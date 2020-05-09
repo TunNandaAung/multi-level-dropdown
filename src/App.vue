@@ -38,7 +38,7 @@ code {
   --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
-  --speed: 500ms;
+  --speed: 250ms;
 }
 
 ul {
@@ -164,11 +164,7 @@ a {
   transition: all var(--speed) ease;
 } */
 
-.menu-primary-enter {
-  transform: translateX(-110%);
-  opacity: 0;
-}
-
+.menu-primary-enter,
 .menu-primary-leave-to {
   transform: translateX(-110%);
   opacity: 0;
@@ -193,11 +189,7 @@ a {
   transform: translateX(110%);
   transition: all var(--speed) ease;
 } */
-.menu-secondary-enter {
-  transform: translateX(110%);
-  opacity: 0;
-}
-
+.menu-secondary-enter,
 .menu-secondary-leave-to {
   transform: translateX(110%);
   opacity: 0;
